@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+        }
+
+        .video {
+            width: 250px;
+        }
+
+        .thumbnail {
+            position: relative;
+        }
+
+        .duration {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background-color: rgba(0, 0, 0, 1);
+            color: white;
+            padding: 4px;
+        }
+
+        .video p {
+            margin: 0;
+        }
+
+        .video .title {
+            font-weight: 700;
+            margin-bottom: 0.2em;
+        }
+
+        .video .channel {
+            font-size: 0.8em;
+            font-weight: 500;
+            margin-bottom: 0.2em;
+        }
+
+        .video .views {
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="video">
+        <div class="thumbnail">
+            <p class="duration">5:30</p>
+            <img src="https://picsum.photos/250/150" alt="">
+        </div>
+        <p class="title">This is a longer and more useful Video Title</p>
+        <p class="channel">Channel Name Here</p>
+        <p class="views">89K views - 2 months ago</p>
+    </div>
+
+    <video>
+        <thumbnail>
+            <duration>5:30</duration>
+            <image></image>
+        </thumbnail>
+    </video>
+
+    <script>
+        const videos = [
+            {
+                duration: '5:30',
+                title: 'This is a longer and more useful Video Title',
+                channel: 'Channel Name Here',
+                views: '89K views - 2 months ago',
+                thumbnail: 'https://picsum.photos/250/150'
+            },
+            {
+                duration: '3:20',
+                title: 'Video Title',
+                channel: 'Im Here',
+                views: '33K views - 1 month ago',
+                thumbnail: 'https://picsum.photos/250/150'
+            },
+            {
+                duration: '1:02',
+                title: 'CCC College',
+                channel: 'CCC',
+                views: '1 view - 2 minutes ago',
+                thumbnail: 'https://picsum.photos/250/150'
+            },
+        ]
+
+
+
+        // JSON
+
+        // convert to json text
+        const jsonVideoObject = JSON.stringify(videos);
+        //console.log(jsonVideoObject);
+
+        // convert back to JS objects
+        const backToJS = JSON.parse(jsonVideoObject);
+        // console.log(backToJS);
+
+
+
+
+        // store in local storage
+        // localStorage.setItem("videos", jsonVideoObject);
+        // localStorage.setItem("username", "Pascal");
+
+
+        // get from local storage
+        const videosFromLocalStorage = localStorage.getItem("videos");
+        const usernameFromLocalStorage = localStorage.getItem("username");
+        console.log(videosFromLocalStorage);
+        console.log(usernameFromLocalStorage);
+
+
+
+
+
+
+        // for loop
+
+        // for (let i = 0; i < videos.length; i++) {
+        //     const video = videos[i];
+        //     console.log(video);
+        // }
+
+
+        // mapping
+
+        // const video = videos.map(video => {
+        //     console.log(video);
+        // });
+
+
+        // forEach
+
+        // videos.forEach(video => {
+        //     console.log(video);
+        // });
+
+    </script>
+
+</body>
+
+</html>
